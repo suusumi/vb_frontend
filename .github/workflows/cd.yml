@@ -22,8 +22,8 @@ jobs:
         run: |
           docker build \
             -t ${{ secrets.DOCKERHUB_USERNAME }}/vbstaff-frontend:${{ github.ref_name }} \
-            -f frontend/Dockerfile \
-            ./frontend
+            -f Dockerfile \
+            .
 
       - name: Push Docker image (frontend)
         run: |
