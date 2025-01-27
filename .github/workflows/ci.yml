@@ -1,0 +1,41 @@
+name: CI Frontend
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm install -g pnpm
+          pnpm install
+
+      - name: Build
+        run: |
+          cd frontend
+          pnpm run build
+
+      - name: Test
+        if: always()
+        run: |
+          cd frontend
+          pnpm run test
+
+      - name: Lint
+        run: |
+          cd frontend
+          pnpm run lint
