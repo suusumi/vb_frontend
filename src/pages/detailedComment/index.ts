@@ -1,0 +1,1 @@
+export {DetailedCommentPage} from "./ui/DetailedCommentPage.tsx";
