@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Box, Typography, CircularProgress} from "@mui/material";
+import {Box, Typography, CircularProgress, Container} from "@mui/material";
 import {CommentsTable} from "../../../features/commentsTable";
 import {Toggle} from "../../../features/toggle";
 import {ViewMode} from "../../../features/toggle/model/types.ts";
@@ -37,8 +37,8 @@ export const AllCommentsPage: React.FC = () => {
     };
 
     return (
-        <Box sx={{marginTop: "10px"}}>
-            <Typography variant="h4">Комментарии</Typography>
+        <Container sx={{marginTop: "20px", marginBottom:'20px'}}>
+            <Typography variant="h4" sx={{marginBottom:'20px'}}>Комментарии</Typography>
             <Toggle viewMode={viewMode} onChange={setViewMode}/>
 
             {isLoading ? (
@@ -50,6 +50,6 @@ export const AllCommentsPage: React.FC = () => {
             ) : (
                 <JsonDataView data={data || defaultData}/>
             )}
-        </Box>
+        </Container>
     );
 };

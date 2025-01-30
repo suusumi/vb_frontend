@@ -27,7 +27,7 @@ export const CommentsTableContent: React.FC<TableProps> = ({comments, isLoading,
         <TableContainer
             component={Paper}
             sx={{
-                maxHeight: {md: 600, xs: 450},
+                maxHeight: {md: 800, xs: 450},
             }}
         >
             <Table stickyHeader>
