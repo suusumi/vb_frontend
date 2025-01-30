@@ -63,7 +63,11 @@ export const CommentsFilters: React.FC<FiltersProps> = ({
                         <Button variant="contained" color="primary" onClick={applyFilters}>
                             Применить
                         </Button>
-                        <Button variant="outlined" color="secondary" onClick={resetFilters}>
+                        <Button
+                            variant="outlined"
+                            onClick={resetFilters}
+                            sx={{borderColor: "black", color: "black"}}
+                        >
                             Сбросить
                         </Button>
                     </Box>
