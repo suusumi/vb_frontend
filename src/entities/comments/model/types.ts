@@ -1,7 +1,21 @@
 export interface Comment {
-    id: string;
-    postId: string;
+    id: number;
+    postId: number;
     name: string;
     email: string;
     body: string;
+}
+
+export interface GetAllCommentsResponse {
+    comments: Comment[];
+    totalPages: number;
+    totalCount: number;
+    currentPage: number;
+}
+
+export interface GetAllCommentsParams {
+    search?: string;
+    page?: number;
+    limit?: number;
+    filters?: Record<string, any>;
 }
